@@ -1,0 +1,124 @@
+@import "@/variable.scss";
+.profiles-container {
+  padding-bottom: var(--window-bottom);
+  background-color: $uni-color-primary;
+  min-height: 100vh;
+  .header {
+    height: 400rpx;
+    position: relative;
+    .bg-img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    .header-content {
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      padding: padding(nav-bar-x-padding);
+      box-sizing: border-box;
+      .avatar-box {
+        z-index: 2;
+        .avatar-img {
+          width: 160rpx;
+          height: 160rpx;
+          border-radius: 50%;
+          overflow: hidden;
+        }
+      }
+      .name-box {
+        z-index: 2;
+        margin-left: 20rpx;
+        height: 160rpx;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .name-text {
+          font-weight: 900;
+          margin-bottom: 12rpx;
+          font-size: 30rpx;
+        }
+        .number-text {
+          color: #848585;
+          font-size: 24rpx;
+        }
+      }
+    }
+  }
+  .middle {
+    padding: padding(nav-bar-x-padding);
+    padding-top: 0;
+    .data-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .data-show {
+        display: flex;
+        .data-item {
+          margin-right: 30rpx;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .item-number {
+            color: #fff;
+            margin-bottom: 4rpx;
+            font-size: 30rpx;
+            font-weight: 900;
+          }
+          .item-text {
+            color: #4e586e;
+            font-size: 20rpx;
+          }
+        }
+      }
+    }
+    .sign-edit {
+      font-size: 20rpx;
+      color: #4e586e;
+      display: flex;
+      align-items: center;
+    }
+    .tags {
+      margin-bottom: 30rpx;
+      .tag-item {
+        border-radius: 8rpx;
+        padding: 8rpx;
+        color: #fff;
+        font-size: 18rpx;
+        background-color: #33343f;
+        margin-right: 10rpx;
+      }
+    }
+  }
+  .tabs {
+    width: 100%;
+    display: flex;
+    position: relative;
+    .tab-item {
+      flex: 1;
+      text-align: center;
+      line-height: 88rpx;
+      height: 88rpx;
+      color: #4e586e;
+      font-size: 28rpx;
+    }
+    // tab项激活样式
+    .tab-item_active {
+      color: #fff;
+      font-weight: 900;
+    }
+    .slide {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 25%;
+      height: 6rpx;
+      background: #fe2c55; 
+      transition: all .3s;
+    }
+  }
+}

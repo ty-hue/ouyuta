@@ -1,0 +1,30 @@
+.nav-bar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 999;
+
+}
+.nav-bar-content {
+  display: flex;
+  position: relative;
+  .center {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    background-color: transparent;
+    /* 关键：让元素不响应点击事件，点击会穿透到下层 */
+    pointer-events: none;
+  }
+  .content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: space-between;
+  }
+}

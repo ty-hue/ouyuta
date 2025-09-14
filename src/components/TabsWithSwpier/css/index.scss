@@ -1,0 +1,35 @@
+@import "@/variable.scss";
+
+  .tabs {
+    width: 100%;
+    white-space: nowrap; /* 关键：内容不换行 */
+    .tabs-content{
+      width: auto;
+      position: relative;
+      .tab-item {
+        display: inline-block;  /* 关键：横向排列 */
+        height: 100rpx;
+        line-height: 100rpx;
+        text-align: center;
+        color: #4e586e;
+        font-size: 28rpx;
+      }
+      // tab项激活样式
+      .tab-item_active {
+        color: #fff;
+        font-weight: 900;
+      }
+      .slide {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 6rpx;
+        background: #fe2c55;
+        transition: all 0.3s;
+      }
+    }
+ 
+  }
+
+
+

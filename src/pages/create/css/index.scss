@@ -1,0 +1,193 @@
+.create-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: #33343f;
+   .top{
+    position: fixed;
+    top: 100rpx;
+    left: 0;
+    width: 100%;
+    height: 80rpx;
+    padding-left: 20rpx;
+    box-sizing: border-box;
+    .close{
+      z-index: 1000;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      ::v-deep .u-icon__icon{
+        font-size: 40rpx !important;
+        font-weight: 900 !important;
+        color: #fff !important;
+      }
+      .popover{
+        position: absolute;
+        bottom: -200rpx;
+        left: 0;
+        width: 300rpx;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        font-size: 30rpx;
+        
+        border-radius: 20rpx;
+        .no-save{
+          padding: 26rpx 0 26rpx 30rpx;
+          display: flex;
+          align-items: center;
+          border-bottom: 1px solid #333;
+          color: red;
+          .iconfont{
+            font-size: 40rpx;
+            margin-right: 10rpx;
+          }
+        }
+        .save{
+          padding: 26rpx 0 26rpx 30rpx;
+          display: flex;
+          align-items: center;
+          color: #000;
+          .iconfont{
+            font-size: 40rpx;
+            margin-right: 10rpx;
+          }
+        }
+        &::after{
+          position: absolute;
+          left: 20rpx;
+          top: -38rpx;
+          content: '';
+          border: 20rpx solid transparent;
+          border-bottom-color: #fff;
+        }
+      }
+    }
+    .choose-music{
+      position: fixed;
+      top: 100rpx;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #33343f;
+      color: #fff;
+      font-size: 26rpx;
+      border-radius: 20rpx;
+
+      box-sizing: border-box;
+      .music-default-btn{
+        width: 160rpx;
+        height: 80rpx;
+        display: flex;
+        align-items: center;
+       .iconfont{
+        font-size: 40rpx;
+        margin-right: 6rpx;
+       }
+      }
+      .music-btn{
+        width: 340rpx;
+        height: 80rpx;
+        padding-left: 26rpx; 
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .sing{
+          display: flex;
+          align-items: center;
+          flex: 1;
+          overflow: hidden;
+          .iconfont{
+            font-size: 40rpx;
+            margin-right: 6rpx;
+          }
+          .sing-name{
+            width: 160rpx;
+          }
+        }
+        .clear-music{
+          width: 80rpx;
+          height: 80rpx;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #33343f;
+          border-top-right-radius: 20rpx;
+          border-bottom-right-radius: 20rpx;
+          border-left: 1px solid #fff;
+          .iconfont{
+            font-size: 40rpx;
+          }
+        }
+      }
+    }
+   }
+  .aside{
+    position: fixed;
+    right: 20rpx;
+    top: 200rpx;
+    .aside-item{
+      display: flex;
+      flex-direction: column;
+      width: 100rpx;
+      height: 100rpx;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      .iconfont{
+        font-size: 50rpx;
+        font-weight: 900;
+      }
+      .item-text{
+        margin-top: 10rpx;
+        font-size: 24rpx;
+        font-weight: normal;
+        letter-spacing: 1rpx;
+      }
+    }
+  }
+  .wrap {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .wrap-content {
+      color: #fff;
+      font-weight: 900;
+      .content-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 26rpx;
+        .content-title {
+          font-size: 32rpx;
+          margin-bottom: 20rpx;
+        }
+        .content-sub-title {
+          font-size: 24rpx;
+          color: #4e586e;
+        }
+      }
+      .permission-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .permission-item {
+          font-weight: normal;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 400rpx;
+          height: 80rpx;
+          background-color: #33343f;
+          font-size: 24rpx;
+          border-radius: 14rpx;
+          margin-bottom: 24rpx;
+          ::v-deep .u-icon__icon {
+            font-size: 38rpx !important;
+            margin-right: 10rpx;
+          }
+        }
+      }
+    }
+  }
+}

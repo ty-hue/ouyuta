@@ -1,0 +1,77 @@
+{
+	"easycom": {
+		// 注意一定要放在custom里，否则无效，https://ask.dcloud.net.cn/question/131175
+		"custom": {
+			"^u--(.*)": "uview-plus/components/u-$1/u-$1.vue",
+			"^up-(.*)": "uview-plus/components/u-$1/u-$1.vue",
+			"^u-([^-].*)": "uview-plus/components/u-$1/u-$1.vue"
+		}
+	},
+	"pages": [
+		{
+			"path": "pages/index/index"
+		},
+		{
+			"path": "pages/messages/index"
+		},
+		{
+			"path": "pages/profiles/index"
+		},
+		{
+			"path": "pages/welcome/index"
+		},
+		{
+			"path": "pages/login/index"
+		},
+		{
+			"path": "pages/register/index"
+		},
+		{
+			"path": "pages/reset/index"
+		},
+		{
+			"path": "pages/result/index"
+		},
+		{
+			"path": "pages/create/index"
+		}
+	],
+	"tabBar": {
+		"color": "#4E586E", // 未选中文字颜色
+		"selectedColor": "#F54B64", // 选中文字颜色
+		"backgroundColor": "#20242F", // TabBar 背景色
+		"borderStyle": "black", // 边框颜色（仅支持 black/white）
+		"height": "100rpx", // TabBar 高度（默认 50px，rpx 单位需换算）
+		"position": "bottom", // 位置（bottom/top，顶部时无图标）
+		// TabBar 项列表（至少 2 项，最多 5 项）
+		"list": [
+			{
+				"pagePath": "pages/index/index", // 对应页面路径（必须在 pages 中注册）
+				"text": "首页", // 文字
+				"iconPath": "./static/tabbaricons/media.png",
+				"selectedIconPath": "./static/tabbaricons/media-selected.png"
+			},
+			{
+				"pagePath": "pages/create/index",
+				"text": "创作",
+				"iconPath": "./static/tabbaricons/create.png",
+				"selectedIconPath": "./static/tabbaricons/create-selected.png"
+			},
+			{
+				"pagePath": "pages/messages/index",
+				"text": "消息",
+				"iconPath": "./static/tabbaricons/message.png",
+				"selectedIconPath": "./static/tabbaricons/message-selected.png"
+			},
+			{
+				"pagePath": "pages/profiles/index",
+				"text": "个人",
+				"iconPath": "./static/tabbaricons/my.png",
+				"selectedIconPath": "./static/tabbaricons/my-selected.png"
+			}
+		]
+	},
+	"globalStyle": {
+		"navigationStyle": "custom"
+	}
+}

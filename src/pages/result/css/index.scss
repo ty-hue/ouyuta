@@ -1,0 +1,35 @@
+.result-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: $uni-color-primary;
+  .content {
+    width: 100%;
+    padding: 200rpx 24rpx 0 24rpx;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .img {
+      width: 500rpx;
+      height: 500rpx;
+      margin-bottom: 30rpx;
+      .status-img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .status-title {
+      font-size: 30rpx;
+      color: #f54b64;
+      font-weight: 900;
+    }
+    .btn {
+      position: fixed;
+      bottom: 300rpx;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400rpx;
+      margin-top: 30rpx;
+    }
+  }
+}

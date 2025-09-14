@@ -1,0 +1,12 @@
+$padding: (
+    nav-bar-x-padding: 20rpx,
+    //自定义nav-bar 水平方向上左右padding值
+  );
+  // 2. 定义获取 padding 值的函数
+  @function padding($key) {
+  @if map-has-key($padding, $key) {
+    @return map-get($padding, $key);
+  }
+  @warn "Padding key `#{$key}` not found in $padding map.";
+  @return 0; // 找不到时返回默认值
+}
