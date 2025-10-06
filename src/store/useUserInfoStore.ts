@@ -31,9 +31,13 @@ export const useUserInfoStore = defineStore(
     };
     // 异步登陆
     const login = async (params: LoginApiParamType) => {
-      const { token } = await loginApi(params);
-      setToken(token);
-      await whoami();
+      try{
+        const { token } = await loginApi(params);
+        setToken(token);
+        await whoami();
+      }catch(e){
+        
+      }
     };
     // 异步获取用户信息
     const whoami = async () => {
@@ -48,19 +52,19 @@ export const useUserInfoStore = defineStore(
       login,
     };
   }, // 第三个参数：持久化配置（setup语法专用）
-  {
-    persist: {
-      enabled: true, // 开启持久化
-      strategies: [
-        {
-          key: INFO, // 自定义存储的key（默认是store的id）
-          paths: ["info"], // 指定需要持久化的字段（默认持久化所有返回的状态）
-        },
-        {
-          key: TOKEN,
-          paths: ["token"],
-        },
-      ],
-    },
-  }
+  // {
+  //   persist: {
+  //     enabled: true, // 开启持久化
+  //     strategies: [
+  //       {
+  //         key: INFO, // 自定义存储的key（默认是store的id）
+  //         paths: ["info"], // 指定需要持久化的字段（默认持久化所有返回的状态）
+  //       },
+  //       {
+  //         key: TOKEN,
+  //         paths: ["token"],
+  //       },
+  //     ],
+  //   },
+  // }
 );

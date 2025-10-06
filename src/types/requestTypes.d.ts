@@ -8,4 +8,3 @@ export interface ResponseData{
     data:any,
     msg:string
 }
-

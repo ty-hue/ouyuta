@@ -25,7 +25,8 @@ export class Request {
     }
 
     // 2. 添加Token（示例：从本地存储获取）
-    const token = uni.getStorageSync("token");
+    const token = uni.getStorageSync(TOKEN);
+    
     if (token) {
       config.header = {
         ...config.header,
@@ -78,7 +79,7 @@ export class Request {
     const data = res.data as ResponseData;
 
     // 示例：假设后端约定 code=0 为成功，其他为错误
-    if (data.code !== 0) {
+    if (data.code !== 0) {      
       // 特殊错误处理：如Token过期
       if (data.code === 401) {
         uni.removeStorageSync(TOKEN); // 清除无效token
@@ -117,7 +118,6 @@ export class Request {
             .catch((err: ResponseData) => reject(err));
         },
         fail: (error) => {
-          console.log("失败", error);
           // 执行响应拦截（失败） 这里不可能返回成功的promise，所以只需要对失败的promise进行处理
           this.responseInterceptor(error, showLoading).catch(
             (err: UniApp.GeneralCallbackResult) => {

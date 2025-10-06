@@ -32,8 +32,13 @@
 		{
 			"path": "pages/result/index"
 		},
+		// #ifdef APP-PLUS
 		{
 			"path": "pages/create/index"
+		},
+		// #endif
+		{
+			"path": "pages/stream/index"
 		}
 	],
 	"tabBar": {
@@ -41,22 +46,30 @@
 		"selectedColor": "#F54B64", // 选中文字颜色
 		"backgroundColor": "#20242F", // TabBar 背景色
 		"borderStyle": "black", // 边框颜色（仅支持 black/white）
-		"height": "100rpx", // TabBar 高度（默认 50px，rpx 单位需换算）
+		"height": "80px", // TabBar 高度（默认 50px，rpx 单位需换算）
 		"position": "bottom", // 位置（bottom/top，顶部时无图标）
 		// TabBar 项列表（至少 2 项，最多 5 项）
 		"list": [
 			{
 				"pagePath": "pages/index/index", // 对应页面路径（必须在 pages 中注册）
-				"text": "首页", // 文字
-				"iconPath": "./static/tabbaricons/media.png",
-				"selectedIconPath": "./static/tabbaricons/media-selected.png"
+				"text": "短视频", // 文字
+				"iconPath": "./static/tabbaricons/short-video.png",
+				"selectedIconPath": "./static/tabbaricons/short-video-selected.png"
 			},
+			{
+				"pagePath": "pages/stream/index", // 对应页面路径（必须在 pages 中注册）
+				"text": "直播", // 文字
+				"iconPath": "./static/tabbaricons/stream.png",
+				"selectedIconPath": "./static/tabbaricons/stream-selected.png"
+			},
+			// #ifdef APP-PLUS
 			{
 				"pagePath": "pages/create/index",
 				"text": "创作",
 				"iconPath": "./static/tabbaricons/create.png",
 				"selectedIconPath": "./static/tabbaricons/create-selected.png"
 			},
+			// #endif
 			{
 				"pagePath": "pages/messages/index",
 				"text": "消息",

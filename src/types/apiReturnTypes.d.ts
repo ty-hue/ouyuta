@@ -24,3 +24,44 @@ export interface WhoamiReturnType {
   sex: boolean;
   avatarUrl: string;
 }
+
+export interface AudioItemType {
+  id: number;
+  audioUrl: string;
+  userId: number;
+  status: boolean;
+  name: string;
+  duration: string;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: string | null;
+  isCollected: boolean;
+  user: {
+    id: number;
+    name: string | null;
+    avatarUrl: string;
+  };
+}
+export interface getUserPrivateAudioListReturnType {
+  total: number;
+  totalPages: number;
+  page: number;
+  pageSize: number;
+  data: AudioItemType[];
+}
+
+export interface PublishVideoReturnType {
+  id: number;
+  videoUrl: string;
+  audioId: number;
+  updatedAt: string;
+  createdAt: string;
+}
+
+export interface SwpContentData {
+  id: number;
+  name: string;
+  list: AudioItemType[];
+  scrollTop?: number;
+}
+

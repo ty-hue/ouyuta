@@ -10,3 +10,5 @@ export const TABBARPATHLIST = [
     "pages/create/index",
     "pages/profiles/index"
 ]
+
+export const HISTORY_SEARCH = 'history_search'

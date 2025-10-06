@@ -1,20 +1,20 @@
 <template>
-  <view class="tabBar-container" v-if="!isShow">
-    <view class="tabs" v-if="isShowBtns">
+  <view class="tabBar-container"  :style="{height:tabBarHeight+'px'}">
+    <view class="tabs"  :style="{height:tabBarHeight+'px'}">
       <view
         class="tab-item"
         v-for="tabItem in tabList"
         :key="tabItem.id"
         @click="handleClick(tabItem.id)"
       >
-        <text :class="[currentIndex === tabItem.id ? 'tab-item_active' : '']">{{
+        <text  :class="['tab-item-text',currentIndex === tabItem.id ? 'tab-item-text-active' : '']">{{
           tabItem.name
         }}</text>
       </view>
     </view>
-    <view class="btns" v-if="!isShowBtns">
+ <!--   <view class="btns" v-if="!isShowBtns">
       <view class="next-btn">下一步</view>
-    </view>
+    </view> -->
   </view>
 </template>
 
@@ -30,10 +30,16 @@ defineProps({
     type: Array<tabItem>,
     required: true,
   },
+  tabBarHeight:{
+    type:Number,
+    required:true
+  }
 });
-const currentIndex = ref(0);
+const emit = defineEmits(['changeComp'])
+const currentIndex = ref(1);
 const handleClick = (id: number) => {
   currentIndex.value = id;
+  emit('changeComp',currentIndex.value);
 };
 const isShow = ref(false);
 const handleIsHide = (isHide: boolean) => {
@@ -59,23 +65,26 @@ onUnmounted(() => {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100vw;
-  height: 140rpx;
+  width: 750rpx;
   background-color: #000;
   .tabs {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
     .tab-item {
-      line-height: 100rpx;
-      text-align: center;
+	  height: 100%;
+      width: 120rpx;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tab-item-text{
       color: #4e586e;
       font-size: 28rpx;
-      width: 120rpx;
     }
     // tab项激活样式
-    .tab-item_active {
+    .tab-item-text-active {
       color: #fff;
       font-weight: 900;
     }

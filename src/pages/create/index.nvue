@@ -1,0 +1,48 @@
+<template>
+  <view class="container" :style="{width:750+'rpx',height:maxHeight+'px'}">
+    <!-- 根据点击TabBar在此区域显示不同的组件 -->
+    <view class="area" :style="{width:750+'rpx',height:cameraHeight + 'px'}">
+      <CustomCamare  :cameraHeight="cameraHeight" :cameraWidth='screenWidth' v-if="currentComp === 1"/>
+      <EditText v-else-if="currentComp === 0" />
+      <LiveStream v-else/>
+    </view>
+    <TabBar :tabList="tabList" :tab-bar-height="tabBarHeight" @changeComp="changeComp"/>
+  </view>
+</template>
+
+<script lang="ts" setup>
+import TabBar from "./comp/TabBar.vue";
+import CustomCamare from "@/components/CustomCamare/index.vue";
+import EditText from '@/components/EditText/index.vue'
+import LiveStream from '@/components/LiveStream/index.vue'
+import {ref,onMounted} from 'vue'
+const {screenHeight,screenWidth} = uni.getSystemInfoSync();
+const maxHeight = screenHeight;
+const tabBarHeight = 140 / 750 * screenWidth;
+const cameraHeight = maxHeight - tabBarHeight;
+onMounted(()=>{
+  uni.hideTabBar()
+})
+// 底部tabBar数据
+const tabList = ref([
+  {
+    id: 0,
+    name: "文字",
+  },
+  {
+    id: 1,
+    name: "相机",
+  },
+  { id: 2, name: "开直播" },
+]);
+// 当前显示哪个组件
+const currentComp = ref(1);
+const changeComp = (current:number)=>{
+  currentComp.value = current
+}
+</script>
+
+
+
+
+

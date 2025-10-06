@@ -1,3 +1,4 @@
+import {FlashValueType} from './enums'
 // 照相第一个参数的类型
 interface captureImageFirstParamType {
     savePath: string;
@@ -47,7 +48,7 @@ interface captureImageFirstParamType {
     getMaxZoomFactor: (callback: (res: any) => void) => void;
     getMinZoomFactor: (callback: (res: any) => void) => void;
     setZoomFactor: (callback: (res: any) => void) => void;
-    setFlash: (param: string) => void;
+    setFlash: (param: FlashValueType) => void;
     setTorch: (param: string) => void;
     ios_getSessionPresets: (callback: (res: any) => void) => void;
     ios_setSessionPreset: (param: string) => void;

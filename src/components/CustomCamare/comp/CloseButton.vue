@@ -2,7 +2,7 @@
   <cover-view class="close">
     <cover-image src="./../../../static/createIcons/close.png" class="left-top-icon" ></cover-image>
     <cover-image src="./../../../static/createIcons/back.png" class="left-top-icon" v-if="false" ></cover-image>
-    <cover-view class="popover">
+    <cover-view class="popover" v-if="false">
       <cover-view class="no-save">
         <cover-image
           src="./../../../static/createIcons/no-save.png"
@@ -26,13 +26,14 @@
 <style lang="scss" scoped>
 .close {
   position: absolute;
+  width: 750rpx;
   top: 100rpx;
-  left: 60rpx;
-  width: 100rpx;
-  height: 100rpx;
+  left: 0rpx;
+  height: 80rpx;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  padding-left: 20rpx;
   .left-top-icon{
     width: 50rpx;
     height: 50rpx;

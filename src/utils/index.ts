@@ -5,7 +5,13 @@ export const rpxToPx = (value: number) => {
   const rpxRate = 750 / screenWidthPx; // px转rpx的系数
   return value / rpxRate;
 };
-
+// px -> RPX
+export const pxToRpx = (value: number) => {
+  const systemInfo = uni.getSystemInfoSync();
+  const screenWidthPx = systemInfo.screenWidth; // 设备屏幕宽度（px）
+  const pxRate = 750 / screenWidthPx;
+  return value * pxRate;
+};
 // 提取 % 或 px 为后缀的前面的数字
 
 export const extractNumber = (str: string) => {
@@ -22,4 +28,19 @@ export const extractNumber = (str: string) => {
 
   // 如果不符合两种格式，返回null或根据需求处理
   return null;
+};
+
+// 防抖
+export const debounce = <T extends (...args: any[]) => void>(
+  fn: T,
+  delay = 3000
+): ((...args: Parameters<T>) => void) => {
+  let timer: ReturnType<typeof setTimeout> | null = null;
+
+  return (...args: Parameters<T>) => {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => {
+      fn(...args);
+    }, delay);
+  };
 };
